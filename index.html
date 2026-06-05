@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拾光軌跡 | 個人學習歷程網站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F8F9FA;
+            color: #4A4A4A;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .morandi-bg-primary { background-color: #A3B18A; }
+        .morandi-text-primary { color: #588157; }
+        
+        /* 滾動彈跳動畫 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+
+        /* 彈出視窗與卡片動畫 */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="morandi-bg-primary text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-widest">拾光軌跡</div>
+            <div class="flex space-x-2 md:space-x-6 text-sm md:text-base">
+                <a href="#home" class="nav-link px-2 md:px-3 py-2 transition">首頁</a>
+                <a href="#science" class="nav-link px-2 md:px-3 py-2 transition">科學探究</a>
+                <a href="#logic" class="nav-link px-2 md:px-3 py-2 transition">邏輯數理</a>
+                <a href="#activities" class="nav-link px-2 md:px-3 py-2 transition">多元活動</a>
+                <a href="#self-learning" class="nav-link px-2 md:px-3 py-2 transition">自主學習</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="max-w-6xl mx-auto py-12 md:py-16 px-4 reveal">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center gap-10">
+            <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#DDE5B6] flex-shrink-0">
+                <img src="https://via.placeholder.com/200/A3B18A/ffffff?text=ME" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 morandi-text-primary">你好，我是 [你的名字]</h1>
+                <p class="text-lg leading-relaxed text-gray-600 mb-6">
+                    目前就讀高二，這是一個紀錄我如何從「被動學習」轉向「主動探究」的數位空間。我不僅關注學科分數，更在乎解決問題的過程與跨領域的連結。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-4 py-1 bg-[#DDE5B6] text-[#588157] rounded-full text-sm font-medium">科學探究家</span>
+                    <span class="px-4 py-1 bg-[#DDE5B6] text-[#588157] rounded-full text-sm font-medium">邏輯思考者</span>
+                    <span class="px-4 py-1 bg-[#DDE5B6] text-[#588157] rounded-full text-sm font-medium">跨域實踐者</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto pb-20 px-4">
+        <h2 class="text-2xl font-bold text-center mb-12 text-[#3C6E71] reveal">核心能力與成果展示</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div id="science" class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#81A1C1] category-card reveal">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/40/81A1C1/ffffff?text=SCI" alt="科學圖標" class="w-10 h-10 rounded-lg mr-3 object-cover shadow-sm">
+                    <h3 class="text-xl font-bold text-[#5E81AC]">科學探究與實作</h3>
+                </div>
+                <p class="text-gray-500 mb-6 text-sm">整合物理、化學、生物實驗，展現從「觀察、假設、實驗驗證」到「邏輯推論」的科學素養思維。</p>
+                <ul class="space-y-3">
+                    <li class="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:shadow-inner transition cursor-pointer">
+                        <span class="text-gray-700 font-medium">物理 / 化學：探究與實作核心報告</span>
+                        <span class="text-xs text-blue-500 font-bold">詳情 →</span>
+                    </li>
+                    <li class="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:shadow-inner transition cursor-pointer">
+                        <span class="text-gray-700">生物：高一至高二系列實驗整合紀錄</span>
+                        <span class="text-xs text-blue-400">詳情 →</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="logic" class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#8FBCBB] category-card reveal">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/40/8FBCBB/ffffff?text=MAT" alt="數理圖標" class="w-10 h-10 rounded-lg mr-3 object-cover shadow-sm">
+                    <h3 class="text-xl font-bold text-[#3B7E7C]">邏輯思考與數理</h3>
+                </div>
+                <p class="text-gray-500 mb-6 text-sm">運用數學邏輯、幾何分析與運算思維，訓練自身在面對繁複或抽象問題時的理性拆解能力。</p>
+                <ul class="space-y-3">
+                    <li class="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:shadow-inner transition cursor-pointer">
+                        <span class="text-gray-700 font-medium">數學：IMC 國際數學競賽挑戰與歷程</span>
+                        <span class="text-xs text-teal-600 font-bold">詳情 →</span>
+                    </li>
+                    <li class="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:shadow-inner transition cursor-pointer">
+                        <span class="text-gray-700">資訊選修：電腦概論與數位科普筆記</span>
+                        <span class="text-xs text-teal-500">詳情 →</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="activities" class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#BF616A] category-card reveal">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/40/BF616A/ffffff?text=ACT" alt="多元圖標" class="w-10 h-10 rounded-lg mr-3 object-cover shadow-sm">
+                    <h3 class="text-xl font-bold text-[#A0525A]">多元活動探索</h3>
+                </div>
+                <p class="text-gray-500 mb-6 text-sm">透過人文語文、社會關懷與跨領域活動，平衡數理學科，培養深厚的人文同理心與團隊合作力。</p>
+                <ul class="space-y-3">
+                    <li class="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:shadow-inner transition cursor-pointer">
+                        <span class="text-gray-700">語文 / 社会：國文作文與地理地圖繪製成果</span>
+                        <span class="text-xs text-red-400">詳情 →</span>
+                    </li>
+                    <li onclick="openModal()" class="flex justify-between items-center p-3 bg-red-50/50 rounded-lg hover:bg-red-50 hover:shadow-inner transition cursor-pointer border border-dashed border-red-200">
+                        <span class="font-bold text-gray-800">✨ 多元表現總覽（幹部、競賽、活動）</span>
+                        <span class="text-xs text-red-500 font-bold">點擊彈出畫面 →</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="self-learning" class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#A3B18A] category-card reveal">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/40/A3B18A/ffffff?text=SDL" alt="自主學習圖標" class="w-10 h-10 rounded-lg mr-3 object-cover shadow-sm">
+                    <h3 class="text-xl font-bold text-[#588157]">自主學習專區</h3>
+                </div>
+                <p class="text-gray-500 mb-6 text-sm">利用常規課表之外的時間，投入熱情進行主題研究，這是我具備高度主動性與時間管理能力的最佳證明。</p>
+                <ul class="space-y-3">
+                    <li class="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:shadow-inner transition cursor-pointer">
+                        <span class="text-gray-700 font-medium">個人專題：描出人生 - LINE 貼圖創作設計與上架發行</span>
+                        <span class="text-xs text-green-600 font-bold">詳情 →</span>
+                    </li>
+                    <li class="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:shadow-inner transition cursor-pointer">
+                        <span class="text-gray-700">實踐紀錄：個人數位品牌與靜態網頁架設紀實</span>
+                        <span class="text-xs text-green-500">詳情 →</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="activityModal" class="modal fixed inset-0 bg-black/50 z-50 flex items-center justify-center opacity-0 pointer-events-none p-4">
+        <div class="bg-[#F8F9FA] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative shadow-2xl">
+            
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">✕</button>
+            
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold tracking-widest text-[#A3B18A] bg-[#DDE5B6]/40 px-3 py-1 rounded-full">EXTRA-CURRICULAR</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#3C6E71] mt-2">多元表現成果總覽</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 category-card shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-2xl mb-4">👥</div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">幹部經歷</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-4">包含班級服務（如班親會協助）與社團幹部經驗，展現責任感。</p>
+                    </div>
+                    <button class="w-full text-center py-2 rounded-xl bg-[#A3B18A] text-white text-sm font-medium hover:bg-[#8F9F77]">進入查看</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 category-card shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-2xl mb-4">🏆</div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">競賽參與紀錄</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-4">收錄高中重點競賽挑戰，如數學 IMC 競賽，著重於抗壓性。</p>
+                    </div>
+                    <button class="w-full text-center py-2 rounded-xl bg-[#BF616A] text-white text-sm font-medium hover:bg-[#A8525A]">進入查看</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 category-card shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-2xl mb-4">🌟</div>
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">其他多元表現</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-4">整合精彩亮點，包含太鼓表演的默契配合、天文營隊心得。</p>
+                    </div>
+                    <a href="https://canva.link/q01aad1i5xs7kz8" target="_blank" class="w-full text-center py-2 rounded-xl bg-[#3B7E7C] text-white text-sm font-medium hover:bg-[#2F6664] block transition-colors text-center">進入查看</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="morandi-bg-primary text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-sm opacity-75">© 2026 [你的名字] | 拾光軌跡 學習成果發表</p>
+        </div>
+    </footer>
+
+    <script>
+        // 滾動動畫控制
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // 控制彈出視窗開關
+        function openModal() {
+            const modal = document.getElementById('activityModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-1', 'pointer-events-auto');
+        }
+        function closeModal() {
+            const modal = document.getElementById('activityModal');
+            modal.classList.remove('opacity-1', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+    </script>
+</body>
+</html>
